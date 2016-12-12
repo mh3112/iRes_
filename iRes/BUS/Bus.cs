@@ -132,6 +132,21 @@ namespace Title.BUS {
             return Dao.GetListNguyenLieu();
         }
 
+        internal static int InsertNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            return Dao.InsertNguyenLieu(nguyenLieu);
+        }
+
+        public static int UpdateNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            return Dao.UpdateNguyenLieu(nguyenLieu);
+        }
+
+        internal static int DeleteNguyenLieu(NguyenLieu nguyenLieu)
+        {
+            return Dao.DeleteNguyenLieu(nguyenLieu);
+        }
+
         internal static int InsertMonAn(MonAn monAn)
         {
             return Dao.InsertMonAn(monAn);

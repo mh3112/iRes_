@@ -81,6 +81,12 @@ namespace Title.GUI {
             textEditTenNhom.Text = "";
             textEditTongSoMon.Text = "0";
         }
+
+        public void Cancel()
+        {
+            this.panelNhomMon.Enabled = false;
+        }
+
         public void Save()
         {
             try

@@ -8,15 +8,19 @@ using System.Threading.Tasks;
 using Title.Config;
 using Title.VO;
 
-namespace Title.DAO {
-    public class Dao {
+namespace Title.DAO
+{
+    public class Dao
+    {
         public static Configuration config = new Configuration();
 
-        public static DataTable GetListNhanVien() {
+        public static DataTable GetListNhanVien()
+        {
             return DataProvider.GetData(config.PROC_GET_LIST_NHANVIEN);
         }
 
-        public static int InsertNhanVien(NhanVien nv) {
+        public static int InsertNhanVien(NhanVien nv)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@MaNV", nv.MaNV),
                 new SqlParameter("@TenNV", nv.TenNV),
@@ -33,7 +37,8 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NHANVIEN, para);
         }
 
-        public static int UpdateNhanVien(NhanVien nv) {
+        public static int UpdateNhanVien(NhanVien nv)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@MaNV", nv.MaNV),
                 new SqlParameter("@TenNV", nv.TenNV),
@@ -50,18 +55,21 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NHANVIEN, para);
         }
 
-        public static int DeleteNhanVien(NhanVien nv) {
+        public static int DeleteNhanVien(NhanVien nv)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@MaNV", nv.MaNV)
             };
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NHANVIEN, para);
         }
 
-        public static DataTable GetListKhachHang() {
+        public static DataTable GetListKhachHang()
+        {
             return DataProvider.GetData(config.PROC_GET_LIST_KHACHHANG);
         }
 
-        public static int InsertKhachHang(KhachHang kh) {
+        public static int InsertKhachHang(KhachHang kh)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
                 new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
@@ -75,7 +83,8 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_INSERT_KHACHHANG, para);
         }
 
-        public static int UpdateKhachHang(KhachHang kh) {
+        public static int UpdateKhachHang(KhachHang kh)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),
                 new SqlParameter("@"+config.KHACHHANG_TENKH, kh.TenKH),
@@ -89,14 +98,16 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_KHACHHANG, para);
         }
 
-        public static int DeleteKhachHang(KhachHang kh) {
+        public static int DeleteKhachHang(KhachHang kh)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.KHACHHANG_MAKH, kh.MaKH),            
             };
             return DataProvider.ExecuteNonQuery(config.PROC_DELETE_KHACHHANG, para);
         }
 
-        public static DataTable GetListMonAn() {
+        public static DataTable GetListMonAn()
+        {
             return DataProvider.GetData(config.PROC_GET_LIST_MONAN);
         }
 
@@ -105,22 +116,26 @@ namespace Title.DAO {
             return DataProvider.GetData(config.PROC_GET_MA_MON_NEXT);
         }
 
-        public static DataTable GetListMonAnByNhomMon(string maNhom) {
+        public static DataTable GetListMonAnByNhomMon(string maNhom)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.MONAN_MANHOM, maNhom),            
             };
             return DataProvider.GetDataByParameter(config.PROC_GET_LIST_MONAN_BY_NHOM_MON, para);
         }
 
-        public static DataTable GetListNhomMon() {
+        public static DataTable GetListNhomMon()
+        {
             return DataProvider.GetData(config.PROC_GET_LIST_NHOMMON);
         }
 
-        public static DataTable GetListBanAn() {
+        public static DataTable GetListBanAn()
+        {
             return DataProvider.GetData(config.PROC_GET_LIST_BANAN);
         }
 
-        public static int UpdateBanAn(BanAn banAn) {
+        public static int UpdateBanAn(BanAn banAn)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.BANAN_MABAN, banAn.MaBan),            
                 new SqlParameter("@"+config.BANAN_TRANGTHAI, banAn.TrangThai),            
@@ -137,14 +152,16 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_SET_BAN_AN_TRONG, para);
         }
 
-        public static DataTable GetListChiTietHoaDon(BanAn banAn) {
+        public static DataTable GetListChiTietHoaDon(BanAn banAn)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.BANAN_MAHOADON, banAn.MaHoaDon),            
             };
             return DataProvider.GetDataByParameter(config.PROC_GET_LIST_CHITIET_HOADON, para);
         }
 
-        public static int InsertChiTietHoaDon(ChiTietHoaDon chiTietHoaDon) {
+        public static int InsertChiTietHoaDon(ChiTietHoaDon chiTietHoaDon)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.CHI_TIET_HOA_DON_MA_HOA_DON, chiTietHoaDon.MaHoaDon),            
                 new SqlParameter("@"+config.CHI_TIET_HOA_DON_MA_MON, chiTietHoaDon.MaMon),            
@@ -153,7 +170,8 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_INSET_CHITIET_HOADON, para);
         }
 
-        public static int InsertHoaDon(HoaDon hoaDon) {
+        public static int InsertHoaDon(HoaDon hoaDon)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.HOA_DON_THOI_GIAN, hoaDon.ThoiGian),            
                 new SqlParameter("@"+config.HOA_DON_MA_KHACH_HANG, hoaDon.MaKH),            
@@ -171,7 +189,8 @@ namespace Title.DAO {
             return DataProvider.GetDataByParameter(config.PROC_HOA_DON_GET_INFO_KHACH_HANG, para);
         }
 
-        public static DataTable GetLastHoaDon() {
+        public static DataTable GetLastHoaDon()
+        {
             return DataProvider.GetData(config.PROC_GET_LAST_HOADON);
         }
 
@@ -192,7 +211,7 @@ namespace Title.DAO {
                 new SqlParameter("@"+config.HOA_DON_MA_NHAN_VIEN, hoaDon.MaNV),            
                 new SqlParameter("@"+config.HOA_DON_CHIET_KHAU, hoaDon.ChietKhau),            
             };
-            return DataProvider.ExecuteNonQuery(config.PROC_EDIT_HOADON,para);
+            return DataProvider.ExecuteNonQuery(config.PROC_EDIT_HOADON, para);
         }
 
         public static DataTable GetInfoHoaDonTheoBanAn(BanAn banAn)
@@ -208,7 +227,8 @@ namespace Title.DAO {
             return DataProvider.GetData(config.PROC_GET_LIST_SUM_MONEY_BY_DAY);
         }
 
-        public static DataTable GetListPhieuNhap() {
+        public static DataTable GetListPhieuNhap()
+        {
             return DataProvider.GetData(config.PROC_GET_LIST_PHIEU_NHAP);
         }
 
@@ -222,11 +242,46 @@ namespace Title.DAO {
             return DataProvider.ExecuteNonQuery(config.PROC_GET_INSERT_PHIEU_NHAP, para);
         }
 
-        public static DataTable GetListNguyenLieu() {
+        public static DataTable GetListNguyenLieu()
+        {
             return DataProvider.GetData(config.PROC_GET_LIST_NGUYEN_LIEU);
         }
 
-        public static DataTable GetListChiTietPhieuNhapByMaPhieuNhap(string maPhieuNhap) {
+        public static int InsertNguyenLieu(NguyenLieu nl)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNL",nl.MaNguyenLieu),
+                new SqlParameter("@TenNL",nl.TenNguyenLieu),
+                new SqlParameter("@DonVi",nl.DonVi),
+                new SqlParameter("@DonGia",nl.DonGia)             
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_INSERT_NGUYEN_LIEU, para);
+        }
+
+        public static int UpdateNguyenLieu(NguyenLieu nl)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNL",nl.MaNguyenLieu),
+                new SqlParameter("@TenNL",nl.TenNguyenLieu),
+                new SqlParameter("@DonVi",nl.DonVi),
+                new SqlParameter("@DonGia",nl.DonGia)             
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_UPDATE_NGUYEN_LIEU, para);
+        }
+
+        public static int DeleteNguyenLieu(NguyenLieu nl)
+        {
+            SqlParameter[] para = new SqlParameter[]
+            {
+                new SqlParameter("@MaNL",nl.MaNguyenLieu)
+            };
+            return DataProvider.ExecuteNonQuery(config.PROC_DELETE_NGUYEN_LIEU, para);
+        }
+
+        public static DataTable GetListChiTietPhieuNhapByMaPhieuNhap(string maPhieuNhap)
+        {
             SqlParameter[] para = new SqlParameter[] {
                 new SqlParameter("@"+config.PHIEU_NHAP_MA_PHIEU_NHAP, maPhieuNhap)           
             };

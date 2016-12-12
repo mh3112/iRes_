@@ -5,7 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.IO;
 
-namespace Title.Config {
+namespace Title.Config
+{
     public class Configuration
     {
 
@@ -17,11 +18,12 @@ namespace Title.Config {
             return projectLink;
         }
 
-        public string CURRENT_NHAN_VIEN = "001";
+        public string CURRENT_NHAN_VIEN = "NV001";
 
         //  public string DATA_SOURCE = @"Data Source=.\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
         //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyNhaHang;Integrated Security=True";
-        public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        //public string DATA_SOURCE = @"Data Source=DESKTOP-8IKVHJR;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
+        public string DATA_SOURCE = @"Data Source=MINHHANG\SQLEXPRESS;Initial Catalog=QuanLyGoiMonNhaHang;Integrated Security=True";
 
         // Property of KhachHang
         public string KHACHHANG_MAKH = "MaKH";
@@ -148,6 +150,9 @@ namespace Title.Config {
 
         // Procedures of NguyenLieu
         public string PROC_GET_LIST_NGUYEN_LIEU = "DanhSachNguyenLieu";
+        public string PROC_INSERT_NGUYEN_LIEU = "ThemNguyenLieu";
+        public string PROC_UPDATE_NGUYEN_LIEU = "SuaNguyenLieu";
+        public string PROC_DELETE_NGUYEN_LIEU = "XoaNguyenLieu";
 
         // Procedures of ChiTietPhieuNhap
         public string PROC_INSERT_CHI_TIET_PHIEU_NHAP = "ThemChiTietPhieuNhap";
@@ -162,6 +167,7 @@ namespace Title.Config {
         public string TAB_NHAP_HANG = "TabNhapHang";
         public string TAB_THONG_KE = "TabThongKe";
         public string TAB_EDIT_MON_AN = "TabEditMonAn";
+        public string TAB_NGUYEN_LIEU = "TabNguyenLieu";
 
         // Resource Path
         public string MONAN_IMAGE_RESOURCE = @"\Resources\MonAn\";

@@ -120,6 +120,11 @@ namespace Title.GUI
             cbxPhanLoai.Text = "";
         }
 
+        public void Cancel()
+        {
+            this.panelTextBox.Enabled = false;
+        }
+
         private void gridView1_RowClick(object sender, RowClickEventArgs e) {
             int[] selRows = ((GridView)gridControlKhachHang.MainView).GetSelectedRows();
             DataRowView selRow = (DataRowView)(((GridView)gridControlKhachHang.MainView).GetRow(selRows[0]));

@@ -136,5 +136,9 @@ namespace Title.GUI {
                 MessageBox.Show(e.Message);
             }
         }
+        public void Cancel()
+        {
+            this.panelTextBox.Enabled = false;
+        }
     }
 }
